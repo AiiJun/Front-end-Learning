@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise关键问题 - Promise 异常穿透</title>
+</head>
+
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                //成功情况
+                resolve('ok');
+                //失败情况
+                // reject('error');
+            }, 1000);
+        });
+
+        p.then(value => {
+            console.log(111);
+            throw '我失败啦';
+        }).then(value => {
+            console.log(222);
+        }).then(value => {
+            console.log(333);
+        }).catch(reason => {
+            //异常穿透   打印的是 23行 抛出的错误
+            console.warn(reason);
+        })
+    </script>
+</body>
+
+</html>

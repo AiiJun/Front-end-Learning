@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            resolve('ok');
+        });
+        let p2 = Promise.reject('error');
+        // let p2 = Promise.resolve('Success');
+        let p3 = Promise.resolve('YES');
+
+        //返回一个新的promise,只有所有的promise都成功才成功,只要有一个失败了就直接失败
+        const result = Promise.all([p1, p2, p3]);
+
+        console.log(result);
+    </script>
+</body>
+
+</html>

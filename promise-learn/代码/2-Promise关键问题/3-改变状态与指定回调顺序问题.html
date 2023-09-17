@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise关键问题 - Promise 指定多个回调</title>
+</head>
+
+<body>
+    <script>
+        //当时异步状态的时候,then方法先执行,改变状态后执行
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('ok');
+            }, 1000)
+        })
+
+        p.then(value => {
+            console.log(value);
+        }, reason => {
+
+        });
+    </script>
+</body>
+
+</html>
