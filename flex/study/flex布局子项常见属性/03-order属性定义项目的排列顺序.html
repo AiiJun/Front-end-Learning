@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: green;
+            /* 让三个子盒子沿着侧轴底侧对齐 */
+            align-items: flex-end;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: yellow;
+            margin-right: 5px;
+        }
+        div span:nth-child(2) {
+            /* order数值越小, 排列越靠前, 默认是0 */
+            /* 默认是0, -1比0小, 排前面 */
+            order: -1;
+        }
+        div span:nth-child(3) {
+            align-self: start;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>
