@@ -51,7 +51,7 @@ body {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 #app .header input {
-  border: 2px solid rgba(175, 47, 47, 0.8);
+  border: 2px solid black;
   border-radius: 10px;
 }
 #app .add {
@@ -61,7 +61,7 @@ body {
   height: 68px;
   width: 140px;
   text-align: center;
-  background-color: rgba(175, 47, 47, 0.8);
+  background-color: black;
   color: #fff;
   cursor: pointer;
   font-size: 18px;
@@ -95,7 +95,7 @@ body {
   font-size: 60px;
   font-weight: 100;
   text-align: center;
-  color: rgba(175, 47, 47, 0.8);
+  color: black;
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
@@ -213,13 +213,13 @@ body {
   height: 40px;
   margin: auto 0;
   font-size: 30px;
-  color: #cc9a9a;
+  color: #999;
   margin-bottom: 11px;
   transition: color 0.2s ease-out;
 }
 
 .todo-list li .destroy:hover {
-  color: #af5b5e;
+  color: #000;
 }
 
 .todo-list li .destroy:after {
