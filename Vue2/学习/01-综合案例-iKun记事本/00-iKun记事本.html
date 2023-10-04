@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/index.css" />
   <title>iKun记事本</title>
-  <link rel="icon" href="../imgs/ikun.ico">
+  <link rel="icon" href="./imgs/ikun.ico">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <!-- 输入框 -->
     <header class="header">
       <h1>iKun记事本</h1>
-      <input placeholder="请输入任务" class="new-todo" v-model="todoName" />
+      <input @keyup.enter="add" placeholder="请输入任务" class="new-todo" v-model="todoName" />
       <button class="add" @click="add">添加任务</button>
     </header>
     <!-- 列表区域 -->
