@@ -1,23 +1,18 @@
-// 文件核心作用: 导入App.vue, 基于App.vue创建结构渲染index.html
-// 1.导入Vue核心包
-import Vue from "vue";
-// 2.导入 APP.vue 根组件
-import App from "./App.vue";
-// 编写导入的代码, 往代码的顶部编写(规范)
-import iKunButton from './components/iKunButton'
-// 提示: 当前处于什么环境(生产环境/开发环境)
-Vue.config.productionTip = false;
+import Vue from 'vue'
+import App from './App.vue'
+import './styles/base.css' // css 样式重置
+import './styles/common.css' // 公共全局样式
+import './assets/iconfont/iconfont.css' // 字体图标的样式
 
-// 进行全局注册 -> 在所有的组件范围内都能直接使用
-// Vue.component(组件名,组件对象)
-Vue.component('iKunButton',iKunButton)
+import BaseGoodsItem from './components/BaseGoodsItem.vue'
+import BaseBrandItem from './components/BaseBrandItem.vue'
+import BaseTopicItem from './components/BaseTopicItem.vue'
+// 是 component, 不是components
+Vue.component('BaseGoodsItem', BaseGoodsItem)
+Vue.component('BaseBrandItem', BaseBrandItem)
+Vue.component('BaseTopicItem', BaseTopicItem)
+Vue.config.productionTip = false
 
-// Vue实例化, 提供render方法 -> 基于App.vue创建结构渲染index.html
 new Vue({
-  // el:'#app', 作用: 和$mount("选择器")作用一致, 用于指定Vue所管理容器
-  // render: (h) => h(App),
-  render: (createElement) => {
-    // 基于APP创建元素结构
-    return createElement(App);
-  },
-}).$mount("#app");
+  render: h => h(App),
+}).$mount('#app')
