@@ -1,20 +1,19 @@
 <template>
   <div class="app">
-    <!-- v-model => :value + @input -->
-    <BaseSelect v-model="selectId"></BaseSelect>
+    <BaseInput v-model="inp"></BaseInput>
   </div>
 </template>
 
 <script>
-import BaseSelect from './components/BaseSelect.vue'
+import BaseInput from './components/BaseInput.vue'
 export default {
   data() {
     return {
-      selectId: '102',
+      inp: '',
     }
   },
   components: {
-    BaseSelect,
+    BaseInput,
   },
 }
 </script>
