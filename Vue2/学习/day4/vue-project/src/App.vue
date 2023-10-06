@@ -1,21 +1,25 @@
 <template>
   <div class="app">
-    <BaseInput v-model="inp"></BaseInput>
+    <button @click="isShow = true">退出按钮</button>
+
+    <!-- :visible.sync => :visible + @update:visible -->
+    <BaseDialog :visible.sync="isShow"></BaseDialog>
   </div>
 </template>
 
 <script>
-import BaseInput from './components/BaseInput.vue'
+import BaseDialog from "./components/BaseDialog.vue";
 export default {
   data() {
     return {
-      inp: '',
-    }
+      isShow: false
+    };
   },
+  methods: {},
   components: {
-    BaseInput,
-  },
-}
+    BaseDialog
+  }
+};
 </script>
 
 <style>
