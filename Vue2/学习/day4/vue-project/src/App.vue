@@ -1,6 +1,7 @@
 <template>
   <div class="app">
-    <BaseSelect @change="selectId = $event" :cityId="selectId"></BaseSelect>
+    <!-- v-model => :value + @input -->
+    <BaseSelect v-model="selectId"></BaseSelect>
   </div>
 </template>
 
@@ -9,7 +10,7 @@ import BaseSelect from './components/BaseSelect.vue'
 export default {
   data() {
     return {
-      selectId: '101',
+      selectId: '102',
     }
   },
   components: {
