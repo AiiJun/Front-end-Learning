@@ -9,14 +9,29 @@
 <script>
 export default {
   // props: ["w"],
-  props:{
-    w:Number // Number String Boolean Array Object Function
+  // 1.基础写法(类型校验)
+  // props:{
+  //   w:Number // Number String Boolean Array Object Function
+  // }
+  // 2.完整写法(类型, 非空, 默认, 自定义校验)
+  props: {
+    w: {
+      type: Number, // 类型校验
+      // required: true, // 非空校验
+      default: 0, //默认值
+      // 自定义校验
+      validator(value) {
+        // console.log(value);
+        if (value >= 0 && value <= 100) {
+          return true;
+        } else {
+          console.error('传入的prop w, 必须是0-100 的数字');
+          return false
+        }
+      }
+    }
   }
-
-
-  // 1.基础写法（类型校验）
-  // 2.完整写法（类型、是否必填、默认值、自定义校验）
-}
+};
 </script>
 
 <style scoped>
