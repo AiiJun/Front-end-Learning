@@ -1,24 +1,50 @@
 <template>
   <div class="app">
-    <BaseA></BaseA>
-    <BaseB></BaseB>
-    <BaseC></BaseC>
+    我是APP组件
+    <button @click="change">修改数据</button>
+    <SonA></SonA>
+    <SonB></SonB>
   </div>
 </template>
 
 <script>
-import BaseA from './components/BaseA.vue'
-import BaseB from './components/BaseB.vue'
-import BaseC from './components/BaseC.vue'
+import SonA from './components/SonA.vue'
+import SonB from './components/SonB.vue'
 export default {
-  components:{
-    BaseA,
-    BaseB,
-    BaseC
-  }
+  provide() {
+    return {
+      // 简单类型 是非响应式的
+      color: this.color,
+      // 复杂类型 是响应式的
+      userInfo: this.userInfo,
+    }
+  },
+  data() {
+    return {
+      color: 'pink',
+      userInfo: {
+        name: 'zs',
+        age: 18,
+      },
+    }
+  },
+  methods: {
+    change() {
+      this.color = 'red'
+      this.userInfo.name = 'ls'
+    },
+  },
+  components: {
+    SonA,
+    SonB,
+  },
 }
 </script>
 
 <style>
-
+.app {
+  border: 3px solid #000;
+  border-radius: 6px;
+  margin: 10px;
+}
 </style>
