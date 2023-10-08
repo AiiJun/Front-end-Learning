@@ -6,7 +6,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item) in data" :key="item.id">
+      <tr v-for="item in data" :key="item.id">
         <slot name="body" :item="item"></slot>
       </tr>
     </tbody>
@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: "MyTable",
   props: {
     data: {
       type: Array,

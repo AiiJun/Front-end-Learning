@@ -1,66 +1,39 @@
 <template>
   <div class="table-case">
-    <MyTable :data="goods">
+    <Table :data="goods">
       <template #head>
         <th>编号</th>
-        <th>名称</th>
         <th>图片</th>
+        <th>名称</th>
         <th width="100px">标签</th>
       </template>
 
       <template #body="{item}">
-        <td>{{ item.id }}</td>
-        <td>{{item.name}}</td>
+        <td>{{item.id}}</td>
         <td>
           <img :src="item.picture" />
         </td>
+        <td>{{item.name}}</td>
         <td>
-          <!-- 标签组件 -->
-          <MyTag v-model="item.tag"></MyTag>
+          <Tag v-model="item.tag"></Tag>
         </td>
       </template>
-    </MyTable>
+    </Table>
   </div>
 </template>
 
 <script>
-// my-tag标签组件的封装
-// 1. 创建组件 - 初始化
-// 2. 实现功能
-//    (1)双击显示, 并且自动聚焦
-//        v-if v-else @dblclick
-//        自动聚焦:
-//        1.$nextTick => $refs 获取到dom, 进行focus获取焦点
-//        2.封装v-focus指令
-//    (2)失去焦点, 隐藏输入框
-//        @blur 操作 isEdit 即可
-//    (3)回显标签信息
-//        回显的标签信息是父组件传递过来的
-//        v-model实现功能(简化代码) v-model => :value 和 @input
-//        组件内部通过props接收, :value设置给输入框
-//    (4)内容修改了, 回车 => 修改标签信息
-//       @keyup.enter, 触发事件 $emit('input',e.target.value)
-
-// -------------------------------------------------------------------
-
-// my-table表格组件的封装
-// 1.数据不能写死, 动态传递表格渲染的数据 props
-// 2.数据不能写死 - 多出结构自定义[具名插槽]
-//      (1)表头支持自定义
-//      (2)主义支持自定义
-
-import MyTag from "./components/MyTag.vue";
-import MyTable from "./components/MyTable.vue";
+import Tag from "./components/Tag.vue";
+import Table from "./components/Table.vue";
 export default {
   name: "TableCase",
   components: {
-    MyTag,
-    MyTable
+    Tag,
+    Table
   },
   data() {
     return {
-      // 测试组件功能的临时数据
-      // tempText:'紫砂壶',
+      test: "测试",
       goods: [
         {
           id: 101,
