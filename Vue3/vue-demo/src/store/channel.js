@@ -17,4 +17,9 @@ export const useChannelStore = defineStore('channel', () => {
         channelList,
         getList
     }
+}, {
+    // persist: true // 开启当前模块的持久化
+    persist: {
+        key: 'iKunChannel' // 修改本地存储的唯一标识
+    }
 })
