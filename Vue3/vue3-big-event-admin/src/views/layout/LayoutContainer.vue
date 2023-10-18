@@ -12,7 +12,7 @@ import {
 import { onMounted } from 'vue'
 import avatar from '@/assets/default.png'
 import { useUserStore } from '@/stores'
-import router from '../../router';
+import router from '@/router';
 const userStore = useUserStore()
 onMounted(() => {
   userStore.getUser()
