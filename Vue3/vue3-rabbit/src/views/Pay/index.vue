@@ -15,6 +15,7 @@ const getPayInfo = async () => {
 }
 onMounted(() => getPayInfo())
 
+// 支付账号  askgxl8276@sandbox.com   111111
 // 跳转支付
 // 携带订单id以及回调地址跳转到支付地址 (get)
 // 支付地址
