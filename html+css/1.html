@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>属性选择器</title>
     <style>
-        /* 选中div后紧紧相邻的兄弟p元素 */
-        /* div+p {
+        /* 选中具有title属性的元素 */
+        /* [title] {
             color: red;
         } */
 
-        /* 选中div后面所有的兄弟p元素 */
-        div~p {
+        /* 选中具有title属性且属性值为aiijun1的元素 */
+        /* [title="aiijun1"] {
+            color: red;
+        } */
+
+        /* 选中具有title属性且属性值为b开头的元素 */
+        /* [title^="b"] {
+            color: red;
+        } */
+
+        /* 选中具有title属性且属性值为n结尾的元素 */
+        /* [title$="n"] {
+            color: red;
+        } */
+
+        /* 选中具有title属性且属性值有23的元素 */
+        [title*="23"] {
             color: red;
         }
     </style>
 </head>
 <body>
-    <div>俊俊</div>
-    <p>学前端</p>
-    <p>学Java</p>
-    <p>学大数据</p>
-    <p>学UI</p>
+    <div title="aiijun1">学前端1</div>
+    <div title="aiijun2">学前端2</div>
+    <div title="biijun23">学前端3</div>
+    <div title="biijun23">学前端4</div>
 </body>
 </html>
